@@ -1,9 +1,13 @@
 export const environment = {
-  production: true,
+  production: false,
   spotify: {
-    clientId: 'TON_CLIENT_ID_ICI',
-    redirectUri: 'https://ton-domaine.com/callback',
+    clientId: 'b9d40f680b1b4bb4a46da302182839d7',
+    redirectUri: 'https://localhost:4200/callback',
     scopes: 'user-top-read user-read-private'
+  },
+  lastfm: {
+    apiKey: '0ea09e4492aab4e7f5af815b493ae606',
+    baseUrl: 'https://ws.audioscrobbler.com/2.0'
   },
   openai: {
     apiKey: 'TA_CLE_OPENAI_ICI'
