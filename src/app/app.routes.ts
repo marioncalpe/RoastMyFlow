@@ -5,8 +5,10 @@ import { Loading } from './pages/loading/loading';
 import { Error } from './pages/error/error';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: Login },
   { path: 'dashboard', component: Dashboard },
   { path: 'loading', component: Loading },
-  { path: 'error', component: Error }
+  { path: 'error', component: Error },
+  { path: '**', redirectTo: 'error' }
 ];
