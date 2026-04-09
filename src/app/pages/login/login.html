@@ -1,43 +1,44 @@
-<!-- Page de login RoastMyFlow -->
 <div class="login-container">
 
-  <!-- Logo et titre -->
+  <!-- Logo -->
   <div class="logo-area">
     <div class="logo-icon">🎵</div>
     <h1 class="logo-title">RoastMyFlow</h1>
     <p class="logo-subtitle">L'IA qui juge tes goûts musicaux</p>
   </div>
 
-  <!-- Boutons de connexion -->
-  <div class="buttons-area">
+  <!-- Formulaire -->
+  <div class="form-area">
 
-    <!-- Bouton Spotify -->
+    <label class="input-label">Ton pseudo Last.fm</label>
+
+    <input
+      type="text"
+      class="username-input"
+      placeholder="ex: johndoe"
+      [(ngModel)]="username"
+      (keyup.enter)="onSubmit()"
+      [disabled]="isLoading"/>
+
+    <!-- Message d'erreur -->
+    <p class="error-msg" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <!-- Bouton submit -->
     <button
-      class="login-btn btn-spotify"
-      (click)="onSpotifyLogin()"
+      class="submit-btn"
+      (click)="onSubmit()"
       [disabled]="isLoading">
-      <span class="btn-icon">▶</span>
-      <span>Continuer avec Spotify</span>
+      <span *ngIf="!isLoading">Analyse mes goûts 🔥</span>
+      <span *ngIf="isLoading">Chargement...</span>
     </button>
 
-    <!-- Bouton Last.fm -->
-    <button
-      class="login-btn btn-lastfm"
-      (click)="onLastfmLogin()"
-      [disabled]="isLoading">
-      <span class="btn-icon">♬</span>
-      <span>Continuer avec Last.fm</span>
-    </button>
+    <!-- Lien création compte -->
+    <a href="https://www.last.fm/join" target="_blank" class="create-account">
+      Pas de compte Last.fm ? Créer un compte gratuit →
+    </a>
 
   </div>
 
-  <!-- Spinner affiché pendant la redirection -->
-  <div class="spinner" *ngIf="isLoading">
-    <div class="spinner-ring"></div>
-    <p>Redirection en cours...</p>
-  </div>
-
-  <!-- Disclaimer humoristique -->
   <p class="disclaimer">
     En continuant, tu acceptes de te faire juger sévèrement par une IA.
   </p>
