@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { SpotifyAuthService } from './spotify-auth.service';
-import { LastfmService } from './lastfm.service';
+import { SpotifyAuthService } from './spotify-auth';
+import { LastfmService } from './lastfm';
 
 /**
  * AuthService

@@ -1,1 +1,45 @@
-<p>login works!</p>
+<!-- Page de login RoastMyFlow -->
+<div class="login-container">
+
+  <!-- Logo et titre -->
+  <div class="logo-area">
+    <div class="logo-icon">🎵</div>
+    <h1 class="logo-title">RoastMyFlow</h1>
+    <p class="logo-subtitle">L'IA qui juge tes goûts musicaux</p>
+  </div>
+
+  <!-- Boutons de connexion -->
+  <div class="buttons-area">
+
+    <!-- Bouton Spotify -->
+    <button
+      class="login-btn btn-spotify"
+      (click)="onSpotifyLogin()"
+      [disabled]="isLoading">
+      <span class="btn-icon">▶</span>
+      <span>Continuer avec Spotify</span>
+    </button>
+
+    <!-- Bouton Last.fm -->
+    <button
+      class="login-btn btn-lastfm"
+      (click)="onLastfmLogin()"
+      [disabled]="isLoading">
+      <span class="btn-icon">♬</span>
+      <span>Continuer avec Last.fm</span>
+    </button>
+
+  </div>
+
+  <!-- Spinner affiché pendant la redirection -->
+  <div class="spinner" *ngIf="isLoading">
+    <div class="spinner-ring"></div>
+    <p>Redirection en cours...</p>
+  </div>
+
+  <!-- Disclaimer humoristique -->
+  <p class="disclaimer">
+    En continuant, tu acceptes de te faire juger sévèrement par une IA.
+  </p>
+
+</div>
